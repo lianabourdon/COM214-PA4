@@ -1,0 +1,94 @@
+<% provide(:title, "Home") %>
+
+<!-- Bootstrap Welcome Alert (above banner) -->
+<div class="alert-container">
+  <div class="alert alert-info alert-dismissible fade show custom-alert-box" role="alert">
+    <strong>Welcome!</strong> This is my portfolio website built with Ruby on Rails.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</div>
+
+<!-- Header Banner -->
+<header class="my-banner-section home-banner d-flex align-items-center justify-content-center">
+  <div class="container text-center">
+    <h1 class="display-4">Welcome to My Portfolio</h1>
+    <p class="lead">Hi, I'm Liana – developer, designer, photographer, music lover.</p>
+
+    <!-- Learn More Button -->
+    <a href="#about" class="btn btn-primary btn-lg mt-3 learn-more-btn">
+      Learn More
+    </a>
+  </div>
+</header>
+
+<!-- About Me Section -->
+<section id="about" class="py-5">
+  <div class="container">
+    <h2 class="mb-4">About Me</h2>
+    <div class="light-blue-box p-4">
+      <div class="row align-items-center">
+        <div class="col-md-4 text-center mb-3 mb-md-0">
+          <%= image_tag "profile.jpg", alt: "Liana Bourdon", class: "profile-img" %>
+        </div>
+        <div class="col-md-8">
+          <p>Hello! I’m <strong>Liana</strong>, a passionate web developer and designer. Here you'll find a glimpse into my journey, my skills, and what drives me. I love building engaging, responsive, and creative web experiences.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Resume Section -->
+<section id="resume" class="py-5 bg-light text-center">
+  <div class="container">
+    <div class="resume-box mx-auto">
+      <h2 class="mb-4">Resume</h2>
+      <p><strong>Education:</strong> B.S. in Computer Science (Expected 2027)</p>
+      <p><strong>Skills:</strong> Visual Basic, Python, Java, HTML, CSS, JavaScript, Ruby on Rails</p>
+      <p><strong>Experience:</strong> Web development projects, UI/UX design, freelance creative work</p>
+      <p>
+        <%= link_to "Download My Resume (PDF)", asset_path("Liana_Bourdon_Resume.pdf"), class: "btn btn-primary", download: "Liana_Bourdon_Resume.pdf" %>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5 text-center">
+  <div class="container">
+    <div class="contact-box mx-auto">
+      <h2 class="mb-4">Contact</h2>
+      <p>If you'd like to get in touch, feel free to reach out!</p>
+      <ul class="list-unstyled">
+        <li><i class="fas fa-envelope me-2"></i> Email: <a href="mailto:lbourdon@conncoll.edu">lbourdon@conncoll.edu</a></li>
+        <li><i class="fab fa-linkedin me-2"></i> LinkedIn: <a href="https://www.linkedin.com/in/liana-bourdon" target="_blank">linkedin.com/in/liana-bourdon</a></li>
+        <li><i class="fab fa-github me-2"></i> GitHub: <a href="https://github.com/lianabourdon" target="_blank">github.com/lianabourdon</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Explore More Bottom Menu -->
+<section id="explore" class="py-5 bg-light text-center">
+  <div class="container">
+    <h2 class="mb-4">Explore More</h2>
+    <div class="btn-group" role="group">
+      <%= link_to root_path, class: "btn btn-outline-primary btn-lg active" do %>
+        <i class="fas fa-home me-2"></i>Home
+      <% end %>
+      <%= link_to coding_path, class: "btn btn-outline-primary btn-lg" do %>
+        <i class="fas fa-code me-2"></i>Coding
+      <% end %>
+      <%= link_to design_path, class: "btn btn-outline-primary btn-lg" do %>
+        <i class="fas fa-paint-brush me-2"></i>Design
+      <% end %>
+      <%= link_to photography_path, class: "btn btn-outline-primary btn-lg" do %>
+        <i class="fas fa-camera me-2"></i>Photography
+      <% end %>
+      <%= link_to music_path, class: "btn btn-outline-primary btn-lg" do %>
+        <i class="fas fa-music me-2"></i>Music
+      <% end %>
+    </div>
+  </div>
+</section>
+

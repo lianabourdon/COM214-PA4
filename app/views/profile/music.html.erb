@@ -1,0 +1,94 @@
+<% provide(:title, "Music") %>
+
+<!-- Header Banner -->
+<header class="my-banner-section music-banner d-flex align-items-center justify-content-center">
+  <div class="text-center">
+    <h1 class="display-4">Music</h1>
+  </div>
+</header>
+
+<!-- Music Content Section -->
+<section id="music-content" class="py-5">
+  <div class="container">
+    <h2 class="mb-4 text-center">I Love K-POP!</h2>
+    <p class="mb-5 text-center">
+      Music is a vital part of my life. I have an immense passion for K-pop, and two groups that have captured my heart are TXT and BTS.
+      Their energy, innovative sounds, and heartfelt performances inspire me every day.
+    </p>
+
+    <!-- Spotify Playlist Button -->
+    <div class="text-center mb-5">
+      <a href="https://open.spotify.com/playlist/1eg8oQ34pvTCdiRlW3yrql?si=1cdc7ce5f6104424&nd=1"
+         target="_blank" class="btn btn-success btn-lg">
+        <i class="fab fa-spotify me-2"></i> Listen to My Spotify Playlist
+      </a>
+    </div>
+
+    <!-- TXT Section -->
+    <h3 class="text-center">TXT (Tomorrow X Together)</h3>
+    <p class="text-center">
+      TXT amazes me with their fresh sound and artistic vision. Their music feels both innovative and relatable.
+    </p>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <a href="https://ibighit.com/txt" target="_blank">
+          <img src="https://ibighit.com/txt/images/txt/discography/the_dream_chapter-eternity/DEvkuGeZqimp54uCZ5FgbCYu.jpg"
+               class="img-fluid rounded" alt="TXT Image 1">
+        </a>
+      </div>
+      <div class="col-md-6 mb-4">
+        <a href="https://ibighit.com/txt" target="_blank">
+          <img src="https://ibighit.com/txt/images/txt/discography/the_chaos_chapter_freeze/RfMzwNE4j2MB8wrjKDMu923Z.jpg"
+               class="img-fluid rounded" alt="TXT Image 2">
+        </a>
+      </div>
+    </div>
+
+    <!-- BTS Section -->
+    <h3 class="text-center mt-5">BTS (Bangtan Sonyeondan)</h3>
+    <p class="text-center">
+      Another K-pop group that continuously inspires me is BTS. Their music is full of energy, emotion, and a universal message
+      that resonates worldwide. I admire how they consistently evolve their sound and create meaningful connections with fans.
+      Here are a couple of my favorite images capturing their remarkable stage presence.
+    </p>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <a href="https://ibighit.com/bts" target="_blank">
+          <img src="https://ibighit.com/bts/images/bts/discography/map_of_the_soul-persona/album-cover.jpg"
+               class="img-fluid rounded" alt="BTS Image 1">
+        </a>
+      </div>
+      <div class="col-md-6 mb-4">
+        <a href="https://ibighit.com/bts" target="_blank">
+          <img src="https://ibighit.com/bts/images/bts/discography/jung-kook/never-let-go/album-cover.png"
+               class="img-fluid rounded" alt="BTS Image 2">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Explore More Bottom Menu -->
+<section id="explore" class="py-5 bg-light text-center">
+  <div class="container">
+    <h2 class="mb-4">Explore More</h2>
+    <div class="btn-group" role="group">
+      <%= link_to root_path, class: "btn btn-outline-primary btn-lg" do %>
+        <i class="fas fa-home me-2"></i>Home
+      <% end %>
+      <%= link_to coding_path, class: "btn btn-outline-primary btn-lg" do %>
+        <i class="fas fa-code me-2"></i>Coding
+      <% end %>
+      <%= link_to design_path, class: "btn btn-outline-primary btn-lg" do %>
+        <i class="fas fa-paint-brush me-2"></i>Design
+      <% end %>
+      <%= link_to photography_path, class: "btn btn-outline-primary btn-lg" do %>
+        <i class="fas fa-camera me-2"></i>Photography
+      <% end %>
+      <%= link_to music_path, class: "btn btn-outline-primary btn-lg active" do %>
+        <i class="fas fa-music me-2"></i>Music
+      <% end %>
+    </div>
+  </div>
+</section>
+

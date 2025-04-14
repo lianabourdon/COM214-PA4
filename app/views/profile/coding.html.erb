@@ -1,0 +1,40 @@
+<!-- app/views/profile/coding.html.erb -->
+<% provide(:title, "Coding") %>
+<header class="my-banner-section coding-banner d-flex align-items-center justify-content-center" id="home">
+  <div class="container text-center">
+    <h1 class="display-4">Coding</h1>
+    <p class="lead">Where creativity meets logic.</p>
+  </div>
+</header>
+
+<section id="coding-content" class="py-5">
+  <div class="container">
+    <h2 class="mb-4">Coding & Computer Science</h2>
+    <p>I am a Computer Science major with a passion for coding and software development. Over the course of my studies, I’ve taken various classes that have solidified my skills and deepened my understanding of programming.</p>
+    <p>I am proficient in **Visual Basic**, **Python**, and **Java**, as well as web technologies like **HTML/CSS**, which form the foundation of my web development expertise. These skills have enabled me to design and build engaging, responsive websites and applications.</p>
+    <p>Currently, I’m expanding my knowledge by taking classes in **Ruby on Rails**, **JavaScript/jQuery**, and **JSON**. These courses are equipping me with the latest web development tools and techniques to build robust, data-driven applications.</p>
+    <p>My academic journey and personal projects have prepared me to tackle complex programming challenges, and I’m excited to continue learning and evolving as a developer.</p>
+  </div>
+</section>
+
+<!-- Explore More buttons to other sections -->
+<section id="explore-coding" class="py-5 bg-light text-center">
+  <div class="container">
+    <h2 class="mb-4">Explore More</h2>
+    <div class="btn-group" role="group" aria-label="Explore navigation">
+      <%= link_to coding_path, class: "btn btn-outline-primary btn-lg active" do %>
+        <i class="fas fa-code me-2"></i>Coding
+      <% end %>
+      <%= link_to design_path, class: "btn btn-outline-primary btn-lg" do %>
+        <i class="fas fa-paint-brush me-2"></i>Design
+      <% end %>
+      <%= link_to photography_path, class: "btn btn-outline-primary btn-lg" do %>
+        <i class="fas fa-camera me-2"></i>Photography
+      <% end %>
+      <%= link_to music_path, class: "btn btn-outline-primary btn-lg" do %>
+        <i class="fas fa-music me-2"></i>Music
+      <% end %>
+    </div>
+  </div>
+</section>
+

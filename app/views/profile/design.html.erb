@@ -1,0 +1,50 @@
+<!-- app/views/profile/design.html.erb -->
+<% provide(:title, "Design") %>
+<header class="my-banner-section design-banner d-flex align-items-center justify-content-center">
+  <div class="container text-center">
+    <h1 class="display-4">Design</h1>
+    <p class="lead">Creative projects and visual storytelling.</p>
+  </div>
+</header>
+
+<section id="design-content" class="py-5">
+  <div class="container">
+    <h2 class="mb-4 text-center">My Design Work</h2>
+    <p class="text-center">I am passionate about creating visually stunning and user-friendly designs. Whether it's graphic design, web design, or branding, my goal is to craft meaningful and engaging experiences.</p>
+    <div class="row text-center">
+      <div class="col-md-4 mb-4">
+        <%= image_tag "design1.jpg", class: "img-fluid rounded", alt: "Design Project 1" %>
+        <p class="mt-2">Logo Design</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <%= image_tag "design2.jpg", class: "img-fluid rounded", alt: "Design Project 2" %>
+        <p class="mt-2">Website UI/UX</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <%= image_tag "design3.jpg", class: "img-fluid rounded", alt: "Design Project 3" %>
+        <p class="mt-2">Illustrations</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="explore-design" class="py-5 bg-light text-center">
+  <div class="container">
+    <h2 class="mb-4">Explore More</h2>
+    <div class="btn-group" role="group">
+      <%= link_to coding_path, class: "btn btn-outline-primary btn-lg" do %>
+        <i class="fas fa-code me-2"></i>Coding
+      <% end %>
+      <%= link_to design_path, class: "btn btn-outline-primary btn-lg active" do %>
+        <i class="fas fa-paint-brush me-2"></i>Design
+      <% end %>
+      <%= link_to photography_path, class: "btn btn-outline-primary btn-lg" do %>
+        <i class="fas fa-camera me-2"></i>Photography
+      <% end %>
+      <%= link_to music_path, class: "btn btn-outline-primary btn-lg" do %>
+        <i class="fas fa-music me-2"></i>Music
+      <% end %>
+    </div>
+  </div>
+</section>
+

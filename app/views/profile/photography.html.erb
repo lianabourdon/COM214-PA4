@@ -1,0 +1,83 @@
+<% provide(:title, "Photography") %>
+
+<!-- Header Banner -->
+<header class="my-banner-section photography-banner d-flex align-items-center justify-content-center">
+  <div class="container text-center">
+    <h1 class="display-4">Photography</h1>
+    <p class="lead">Capturing moments from concerts, vacations, portraits, and more.</p>
+  </div>
+</header>
+
+<!-- Photography Gallery Section -->
+<section id="photography" class="py-5">
+  <div class="container">
+    <h2 class="mb-4 text-center">Concert Photography &amp; Videos</h2>
+
+    <p class="text-center">
+      I absolutely love the energy and excitement of K-pop concerts—there's nothing like being surrounded
+      by the lights, the music, and thousands of fellow fans. My camera (and phone) are always at the ready
+      to capture special moments when the artists connect with the crowd. Below are some of my favorite
+      photos from past shows, along with short video clips to share that unforgettable concert vibe.
+    </p>
+
+    <!-- Photos -->
+    <div class="row mt-4">
+      <div class="col-md-4 mb-4">
+        <%= image_tag "photo1.jpg", class: "img-fluid rounded", alt: "Concert Photo 1" %>
+      </div>
+      <div class="col-md-4 mb-4">
+        <%= image_tag "photo2.jpg", class: "img-fluid rounded", alt: "Concert Photo 2" %>
+      </div>
+      <div class="col-md-4 mb-4">
+        <%= image_tag "photo3.jpg", class: "img-fluid rounded", alt: "Concert Photo 3" %>
+      </div>
+    </div>
+
+    <!-- Video Intro -->
+    <p class="mt-4 text-center">
+      Here are a couple of short clips from different shows. They might not be professional-grade, but they
+      capture the awesome atmosphere (and my enthusiasm!) pretty well.
+    </p>
+
+    <!-- Videos -->
+    <div class="row mt-3">
+      <div class="col-md-6 mb-4">
+        <video class="img-fluid rounded" controls>
+          <source src="<%= asset_path('1.mp4') %>" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="col-md-6 mb-4">
+        <video class="img-fluid rounded" controls>
+          <source src="<%= asset_path('2.mp4') %>" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Explore More Bottom Menu -->
+<section id="explore" class="py-5 bg-light text-center">
+  <div class="container">
+    <h2 class="mb-4">Explore More</h2>
+    <div class="btn-group" role="group">
+      <%= link_to root_path, class: "btn btn-outline-primary btn-lg" do %>
+        <i class="fas fa-home me-2"></i>Home
+      <% end %>
+      <%= link_to coding_path, class: "btn btn-outline-primary btn-lg" do %>
+        <i class="fas fa-code me-2"></i>Coding
+      <% end %>
+      <%= link_to design_path, class: "btn btn-outline-primary btn-lg" do %>
+        <i class="fas fa-paint-brush me-2"></i>Design
+      <% end %>
+      <%= link_to photography_path, class: "btn btn-outline-primary btn-lg active" do %>
+        <i class="fas fa-camera me-2"></i>Photography
+      <% end %>
+      <%= link_to music_path, class: "btn btn-outline-primary btn-lg" do %>
+        <i class="fas fa-music me-2"></i>Music
+      <% end %>
+    </div>
+  </div>
+</section>
+
