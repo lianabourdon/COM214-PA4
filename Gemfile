@@ -27,7 +27,7 @@ gem "jbuilder"
 # Gemfile
 
 gem "sassc-rails"            # SCSS compiler for the asset pipeline
-gem "bootstrap", "~> 5.3.0"  # Bootstrap 5 gem (CSS & JS)
+gem "bootstrap", "~> 5.3.5"  # Bootstrap 5 gem (CSS & JS)
 gem "font-awesome-sass", "~> 6.1"  # FontAwesome 6 (SASS integration)
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
