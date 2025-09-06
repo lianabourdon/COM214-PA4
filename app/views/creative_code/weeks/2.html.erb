@@ -1,0 +1,99 @@
+<div class="container py-4 cargo-syllabus">
+  <hr>
+  <h2>WEEK 2 (hypertext)</h2>
+  <div class="bodycopy">
+    Build yourself a website, using either hand-coded HTML and CSS or a content management system like Cargo or Wordpress
+    <span class="note">(I won’t grade one method more favorably than the other)</span>.
+    <br><br>
+    <span class="leadline">Consider the following:</span>
+    <ul>
+      <li>Although this is technically your “portfolio” site for this class, you’re not required to put your name or any identifying information anywhere on the site (though you certainly may).</li>
+      <li>You’ll be asked to post all of your weekly projects on this website moving forward, but they don’t need to be on a publicly visible page as long as you send me the project page’s url on Moodle.</li>
+      <li>What information do you want to present, and how do you want to arrange it? Are you trying to be clear and direct? Or complex and opaque?</li>
+      <li>What are the unique affordances of the platform you’re using to build your website? Are there ways to exploit and/or subvert them?</li>
+      <li>Remember that you’ll be adding to this site throughout the rest of the semester. Consider how you might be able to give your website space to grow and develop (whatever that might mean to you).</li>
+    </ul>
+  </div>
+</div>
+
+<div class="container py-4 cargo-syllabus">
+  <hr>
+  <div class="bodycopy">
+
+    <p>
+      For this project, the <span class="u">website itself</span> is the work.  
+      The full source code is available on GitHub:  
+      <a href="https://github.com/lianabourdon/COM214-PA4" target="_blank" rel="noopener">
+        github.com/lianabourdon/COM214-PA4
+      </a>
+    </p>
+
+    <p>
+  The repository name <code>COM214-PA4</code> comes from its origin as a project for my
+  <span class="u">COM 214; Web Technologies &amp; Development course.</span><br>
+  For AT101, I chose to <span class="u">iterate</span> on this existing work by adding a
+  <strong>Creative Coding</strong> section that documents weekly projects.
+</p>
+
+    <hr>
+
+    <h3>Technology Stack</h3>
+    <ul>
+      <li>Rails (7.2.2.1): MVC framework and routing</li>
+      <li>Ruby 3.2.3: language runtime</li>
+      <li>Bootstrap: responsive layout and grid system</li>
+      <li>Font Awesome: icons for navigation and buttons</li>
+      <li>SCSS / Sprockets: stylesheet management and custom Cargo-style typography</li>
+      <li>ERB Templates: views for each section of the site</li>
+    </ul>
+
+    <hr>
+
+    <h3>Site Organization</h3>
+    <ul>
+      <li><code>/</code>  Home landing page</li>
+      <li><code>/coding</code>  Original COM 214 “Coding” portfolio</li>
+      <li><code>/at101</code>  Password-protected AT101 section with weekly index</li>
+      <li><code>/at101/weeks/:id</code>  Individual week instructions + submissions</li>
+      <li><code>/public/at101/*.pdf</code>  Downloadable PDF versions</li>
+    </ul>
+
+    <hr>
+
+    <h3>Reflection</h3>
+    <p class="leadline">What information do you want to present, and how do you want to arrange it?</p>
+    <p>
+      I want to present <span class="u">both course work and portfolio material</span> in a way that is
+      <span class="u">clear and direct</span>. The navigation is simple: each major section is accessible
+      from the top menu, and each AT101 week has its own page. By keeping a consistent
+      structure, the site is easy to follow while still showing technical depth.
+    </p>
+
+    <p class="leadline">What are the unique affordances of the platform you’re using?</p>
+    <p>
+      Because I chose <span class="u">Ruby on Rails</span>, I can go beyond static HTML. Rails makes it
+      possible to manage routes like <code>/weeks/:id</code> automatically, render Markdown or PDFs,
+      and gate the AT101 section with password protection. I can also subvert the “portfolio”
+      expectation by embedding live experiments (p5.js sketches, Twine games, etc.) directly into
+      week pages — not just screenshots or static text.
+    </p>
+    <p class="leadline">How can the site grow and develop?</p>
+    <p>
+      The site is designed to <span class="u">grow incrementally</span>. Each week I can add a new ERB file
+      (and optionally a PDF) without breaking navigation. The AT101 index automatically links to
+      all weeks, so the structure accommodates future work. After AT101, I could extend the site
+      further to include new sections or merge it back into my professional portfolio, showing a
+      continuous progression from COM 214 to AT101 and beyond.
+    </p>
+
+    <div class="mt-3">
+      <a href="/at101/creative-codes-week2.pdf"
+         class="btn btn-sm btn-danger rounded-pill"
+         download target="_blank" rel="noopener">
+        download pdf version
+      </a>
+    </div>
+
+  </div>
+</div>
+
