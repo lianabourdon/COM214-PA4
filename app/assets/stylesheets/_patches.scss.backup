@@ -1,0 +1,99 @@
+/* ===== AT101 / Cargo-style syllabus ===== */
+.cargo-syllabus {
+  /* spacing + top rule between weeks */
+  hr {
+    background: rgba(0, 0, 0, 0.7);
+    border: 0;
+    height: 1px;
+    margin: 0.75rem 0 1.5rem;
+  }
+
+  /* main week heading */
+  h2 {
+    font-weight: 900;                      /* heavy, bold look */
+    font-size: clamp(2.8rem, 6vw, 4.8rem); /* very large heading */
+    line-height: 1.1;
+    margin: 0 0 1rem 0;
+    color: rgba(0, 0, 0, 0.9);
+    letter-spacing: 0;
+  }
+
+  /* serif body copy */
+  .bodycopy {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.2rem;
+    line-height: 1.35;
+    color: rgba(0, 0, 0, 0.9);
+  }
+
+  /* underlined links like Cargo */
+  .bodycopy a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    color: inherit;
+  }
+
+  /* bold/underlined lead line */
+  .leadline {
+    display: block;
+    margin-bottom: 0.5rem;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+
+  /* italic note inside text */
+  .note {
+    font-style: italic;
+  }
+
+  /* list spacing */
+  .bodycopy ul {
+    margin: 0.5rem 0 1rem 1.5rem;
+    padding: 0;
+  }
+
+  .bodycopy li {
+    margin: 0.25rem 0;
+    line-height: 1.4;
+  }
+.cargo-syllabus .bodycopy pre {
+  background: #f6f6f6;
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+  overflow: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: .95rem;
+  line-height: 1.4;
+}
+.cargo-syllabus .btn.rounded-pill {
+  padding: .25rem .6rem;
+  font-size: .85rem;
+  text-transform: lowercase;
+}
+
+  /* nested lists slightly different marker */
+  .bodycopy ul ul {
+    list-style: circle;
+    margin-top: 0.25rem;
+  }
+/* ===== Dark mode overrides for AT101 (must be last) ===== */
+body.dark-mode .cargo-syllabus h2 { color: #ffffff !important; }
+body.dark-mode .cargo-syllabus .bodycopy { color: rgba(255,255,255,0.9) !important; }
+body.dark-mode .cargo-syllabus .bodycopy a {
+  color: #9ecbff !important;
+  border-bottom-color: rgba(158,203,255,0.6) !important;
+}
+body.dark-mode .cargo-syllabus .bodycopy a:hover {
+  color: #c8e2ff !important;
+  border-bottom-color: rgba(200,226,255,0.8) !important;
+}
+body.dark-mode .cargo-syllabus hr { background: rgba(255,255,255,0.35) !important; }
+body.dark-mode .cargo-syllabus .bodycopy pre {
+  background: #1e1e1e !important;
+  color: #e0e0e0 !important;
+  border: 1px solid #2a2a2a !important;
+}
+
+
+}

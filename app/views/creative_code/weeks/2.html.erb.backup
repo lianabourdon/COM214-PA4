@@ -1,31 +1,9 @@
 <%= render "creative_code/shared/back_to_at101" %>
 
 <div class="container py-4 cargo-syllabus">
-  <aside class="alert alert-info small mb-3">
-    <strong>Artist Statement: Repository:</strong>
-    I’m treating my site as a catalog of weekly artifacts. Each entry documents the prompt,
-    my process, and the final piece, with consistent structure so the collection is easy to browse.
-  </aside>
-
-  <nav class="d-flex justify-content-between my-3">
-    <% wk = @week.to_i %>
-    <div>
-      <% if wk > 1 %>
-        <%= link_to "← Week #{wk - 1}", at101_week_path(wk - 1), class: "btn btn-outline-secondary btn-sm" %>
-      <% end %>
-    </div>
-    <div>
-      <% if wk < 10 %>
-        <%= link_to "Week #{wk + 1} →", at101_week_path(wk + 1), class: "btn btn-outline-secondary btn-sm" %>
-      <% end %>
-    </div>
-  </nav>
-
   <hr>
   <h2>WEEK 2 (hypertext)</h2>
-
-
-<div class="bodycopy">
+  <div class="bodycopy">
     Build yourself a website, using either hand-coded HTML and CSS or a content management system like Cargo or Wordpress
     <span class="note">(I won’t grade one method more favorably than the other)</span>.
     <br><br>
