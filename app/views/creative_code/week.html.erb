@@ -1,20 +1,21 @@
-<div class="container py-4">
-  <nav aria-label="breadcrumb" class="mb-3">
-    <ol class="breadcrumb mb-0">
-      <li class="breadcrumb-item"><a href="/">Home</a></li>
-      <li class="breadcrumb-item"><a href="/coding">Coding</a></li>
-      <li class="breadcrumb-item"><a href="<%= at101_path %>">AT101 Projects</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Week <%= @week %></li>
-    </ol>
-  </nav>
+<div class="d-flex justify-content-between align-items-center my-3">
+  <div class="d-flex gap-2">
+    <%= link_to "← Back to My Creative Code AT101 Projects",
+        at101_index_path, class: "btn btn-warning btn-sm" %>
 
-  <h1 class="h3 mb-3">Week <%= @week %></h1>
+    <% if @week.to_i > 1 %>
+      <%= link_to "← Week #{@week.to_i - 1}",
+          at101_week_path(@week.to_i - 1),
+          class: "btn btn-outline-secondary btn-sm" %>
+    <% end %>
+  </div>
 
-  <div class="card shadow-sm">
-    <div class="card-body">
-      <!-- Replace with your Week <%= @week %> notes, links, screenshots, embeds -->
-      <p class="text-muted">Add your content for Week <%= @week %> here.</p>
-    </div>
+  <div>
+    <% if @week.to_i < 10 %>
+      <%= link_to "Week #{@week.to_i + 1} →",
+          at101_week_path(@week.to_i + 1),
+          class: "btn btn-outline-secondary btn-sm" %>
+    <% end %>
   </div>
 </div>
 

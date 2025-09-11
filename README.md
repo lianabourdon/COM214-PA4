@@ -1,114 +1,120 @@
-# Rails Portfolio Website  
-## COM214 Programming Assignment 4  
+# COM214-PA4 — Rails Portfolio (extended for AT101 Creative Code)
 
-**Course:** COM214 – Spring 2025  
-**Author:** Liana Bourdon  
-**Submission:** Programming Assignment 4 (PA4)  
-**Date:** April 13, 2025  
-**Github Repository Name:** COM214-PA4  
-**Github Repository Link** [https://github.com/lianabourdon/COM214-PA4](https://github.com/lianabourdon/COM214-PA4)
+A Ruby on Rails portfolio site originally built for **COM214 — Web Technologies & Development** and later **extended for AT101 — Creative Code** with weekly project pages (Weeks 1–10).
 
-## Overview  
+**Live Deployments**  
+- **Custom domain (Cloudflare → Heroku)**: https://lianabourdon.com  
+- **Heroku app**: https://lianabourdon-c84f221a058a.herokuapp.com/
 
-This project is a Ruby on Rails implementation of my multi-page personal portfolio website from Programming Assignment 2 (PA2). It maintains the same high-quality design, content depth, and interactive elements, now enhanced by Rails' MVC architecture, gem-managed assets (Bootstrap, FontAwesome), and a custom dark/light mode feature implemented in JavaScript.
+## Features
 
----
+- Ruby **3.2.3**, Rails **7.2.2.1**
+- Bootstrap **5.3** & Font Awesome icons
+- Sprockets asset pipeline; ERB views
+- **AT101 Creative Code section** with 10 weeks of assignments  
+  - Artist Statement only on Week 2  
+  - Navigation buttons (Back to AT101, Prev, Next) consistent across all weeks
+- Deployed on **Heroku**; proxied via **Cloudflare** to custom domain
 
-## 1. Rails Structure  
+> **AT101 visibility:** The AT101 section is **public**. No login is required at the moment.  
+> If you prefer, you can enable HTTP Basic authentication with environment variables (see below).
 
-### Controllers and Routing:  
+## Structure
 
-- Implemented a dedicated ProfileController with multiple actions: index (home), coding, design, photography, and music.
-- Routes properly set for each page within Rails' `config/routes.rb`.
+**Controllers & routes**
+- `ProfileController` → standard portfolio pages (`/`, `/coding`, `/design`, `/photography`, `/music`)
+- `CreativeCodeController` → AT101 section
+  - `/at101` → index/cards
+  - `/at101/weeks/:id` → week detail (1–10)
 
-### Views:  
+**Views**
+```
+app/views/profile/*                
+app/views/creative_code/index.html.erb
+app/views/creative_code/weeks/1.html.erb ... 10.html.erb
+app/views/creative_code/_week_header.html.erb   # shared nav partial
+```
 
-- All views placed in the `app/views/profile/` directory.
-- Structured MVC implementation, exceeding the minimum required pages.
+## Local Development
 
----
-
-## 2. Content  
-
-- **Comprehensive Pages:** Home, Coding, Design, Photography, Music.
-- **Detailed Content:** Textual descriptions, resume details, educational background, and professional experiences.
-- **Portfolio Items:** Design examples, photography galleries, coding projects, and music interests.
-
----
-
-## 3. Custom CSS  
-
-- Use of custom CSS styles in `app/assets/stylesheets/_styles.scss`.
-- CSS variables for theme management and responsive design adjustments via media queries.
-
----
-
-## 4. Icons  
-
-- FontAwesome icons used throughout navigation, contact sections, and various UI components.
-- Integrated via Rails gem: `font-awesome-sass`.
-
----
-
-## 5. Images  
-
-- Use of images: Profile picture, banner images, design thumbnails, photography gallery, music album covers.
-- Images managed through Rails' asset pipeline (`app/assets/images/`).
-
----
-
-## 6. Bootstrap Styling  
-
-- Fully bootstrapped site using the Bootstrap gem (`bootstrap 5.3.0`), managed through the Rails asset pipeline.
-- All layouts, navbars, buttons, alerts, and responsive grids fully utilize Bootstrap classes.
-
----
-
-## 7. Bonus  
-
-- Dark mode toggle implemented using custom JavaScript, enhancing user interaction and accessibility.
-- Preference persistence via `localStorage`.
-
----
-
-## 8. Project Structure  
-
-- `app/controllers/profile_controller.rb` – Controls page actions.
-- `app/views/profile/` – Contains HTML/ERB files for each page.
-- `app/assets/stylesheets/_styles.scss` – Custom CSS.
-- `app/assets/javascripts/` – Custom JavaScript and Bootstrap JS.
-- `app/assets/images/` – Images used across the website.
-- `config/routes.rb` – Defines URL routes.
-
----
-
-## 9. Usage  
-
-### Running the Project Locally  
-
-
+```bash
+git clone https://github.com/lianabourdon/COM214-PA4.git
+cd COM214-PA4
 bundle install
-rails assets:precompile
-rails server
+bin/rails s
+# visit http://localhost:3000
+```
 
-Visit [http://localhost:3000](http://localhost:3000) to explore the website.
+## Deploying to Heroku
 
----
+**One-time setup**
+```bash
+# ensure Procfile exists
+echo 'web: bundle exec puma -C config/puma.rb' > Procfile
 
-## 10. Navigation
+# create the app (if not already done)
+heroku create lianabourdon
 
-Use the top fixed navbar and the "Explore More" buttons located at the bottom of each page.
+# set master key so credentials work
+heroku config:set RAILS_MASTER_KEY="$(cat config/master.key)" -a lianabourdon
 
-### Dark Mode
+# optional: serve static and log to stdout
+heroku config:set RAILS_SERVE_STATIC_FILES=1 RAILS_LOG_TO_STDOUT=1 -a lianabourdon
+```
 
-Click the moon icon in the navbar to toggle between dark and light modes. Your preference is saved in `localStorage`.
+**Deploy changes**
+```bash
+git push heroku main
+heroku open -a lianabourdon
+heroku logs -t -a lianabourdon
+```
 
-### Gems & Libraries Used
+## Custom Domain with Cloudflare
 
-- Ruby on Rails
-- Bootstrap 5.3 (via `bootstrap` gem)
-- FontAwesome (via `font-awesome-sass` gem)
+1. Add domain in Heroku:  
+   ```bash
+   heroku domains:add lianabourdon.com -a lianabourdon
+   heroku certs:auto:enable -a lianabourdon
+   ```
+   Copy the Heroku DNS Target (e.g., `example.herokudns.com`).
 
----
+2. In Cloudflare:  
+   - DNS → add CNAME for `lianabourdon.com` pointing to the Heroku DNS Target  
+   - Proxied (orange cloud) ON
 
-**END OF `README.md`**
+3. SSL/TLS mode: **Full**
+
+4. Purge Cloudflare cache.
+
+Test at https://lianabourdon.com
+
+**Enable**
+```bash
+heroku config:set AT101_USER=admin AT101_PASS=SecretPass -a lianabourdon
+```
+
+**Disable**
+```bash
+heroku config:unset AT101_USER AT101_PASS -a lianabourdon
+```
+
+## Maintenance
+
+**Zip up a clean copy (exclude junk)**  
+```bash
+zip -r COM214-PA4.zip COM214-PA4   -x "COM214-PA4/tmp/*" "COM214-PA4/log/*" "COM214-PA4/cache/*"      "COM214-PA4/test/*" "COM214-PA4/tmp/cache/*" "COM214-PA4/tmp/cache/bootsnap/*"      "COM214-PA4/node_modules/*" "COM214-PA4/.git/*" "COM214-PA4/.bundle/*"      "COM214-PA4/vendor/bundle/*" "COM214-PA4/.cache/*"      "*.gz" "*.zip" "*.tar" "*.bak" "*.backup" "*.bk" "*.old"
+```
+
+**Update week content**
+```bash
+git add app/views/creative_code/weeks/2.html.erb
+git commit -m "Update Week 2 content"
+git push heroku main
+```
+
+## Credits
+
+- Built for **COM214** at Connecticut College, extended for **AT101 Creative Code (Fall 2025)**.  
+- Hosted at **Heroku** with Cloudflare custom domain integration.  
+- Navigation and page styling inspired by Cargo/portfolio layouts.
+

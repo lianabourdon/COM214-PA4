@@ -129,5 +129,18 @@ body.dark-mode {
   .btn-group .btn {
     margin-bottom: 5px; /* spacing between rows */
   }
+
+/* Utility underline */
+.u { 
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+}
+/* (Optional: also make raw <u> look nice) */
+u {
+  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+}
+
 }
 
