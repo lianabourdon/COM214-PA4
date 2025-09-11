@@ -17,7 +17,6 @@ A Ruby on Rails portfolio site originally built for **COM214 — Web Technologie
 - Deployed on **Heroku**; proxied via **Cloudflare** to custom domain
 
 > **AT101 visibility:** The AT101 section is **public**. No login is required at the moment.  
-> If you prefer, you can enable HTTP Basic authentication with environment variables (see below).
 
 ## Structure
 
@@ -87,30 +86,6 @@ heroku logs -t -a lianabourdon
 4. Purge Cloudflare cache.
 
 Test at https://lianabourdon.com
-
-**Enable**
-```bash
-heroku config:set AT101_USER=admin AT101_PASS=SecretPass -a lianabourdon
-```
-
-**Disable**
-```bash
-heroku config:unset AT101_USER AT101_PASS -a lianabourdon
-```
-
-## Maintenance
-
-**Zip up a clean copy (exclude junk)**  
-```bash
-zip -r COM214-PA4.zip COM214-PA4   -x "COM214-PA4/tmp/*" "COM214-PA4/log/*" "COM214-PA4/cache/*"      "COM214-PA4/test/*" "COM214-PA4/tmp/cache/*" "COM214-PA4/tmp/cache/bootsnap/*"      "COM214-PA4/node_modules/*" "COM214-PA4/.git/*" "COM214-PA4/.bundle/*"      "COM214-PA4/vendor/bundle/*" "COM214-PA4/.cache/*"      "*.gz" "*.zip" "*.tar" "*.bak" "*.backup" "*.bk" "*.old"
-```
-
-**Update week content**
-```bash
-git add app/views/creative_code/weeks/2.html.erb
-git commit -m "Update Week 2 content"
-git push heroku main
-```
 
 ## Credits
 
