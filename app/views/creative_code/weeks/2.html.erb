@@ -1,31 +1,30 @@
-<%= render "creative_code/shared/back_to_at101" %>
+<%= render "creative_code/week_header" %>
 
 <div class="container py-4 cargo-syllabus">
-  <aside class="alert alert-info small mb-3">
-    <strong>Artist Statement: Repository:</strong>
-    I’m treating my site as a catalog of weekly artifacts. Each entry documents the prompt,
-    my process, and the final piece, with consistent structure so the collection is easy to browse.
-  </aside>
+  
+<aside class="alert alert-info small mb-3">
+  <strong>Artist Statement: Repository:</strong>
+  I’m treating this site as a catalog of weekly artifacts. Each entry includes the prompt,
+  my process, and the final piece, in a consistent structure so the collection is easy to browse.
+</aside>
 
-  <nav class="d-flex justify-content-between my-3">
-    <% wk = @week.to_i %>
-    <div>
-      <% if wk > 1 %>
-        <%= link_to "← Week #{wk - 1}", at101_week_path(wk - 1), class: "btn btn-outline-secondary btn-sm" %>
-      <% end %>
-    </div>
-    <div>
-      <% if wk < 10 %>
-        <%= link_to "Week #{wk + 1} →", at101_week_path(wk + 1), class: "btn btn-outline-secondary btn-sm" %>
-      <% end %>
-    </div>
-  </nav>
+<nav class="d-flex justify-content-between my-3">
+  <% wk = @week.to_i %>
+  <div>
+    <% if wk > 1 %>
+      <%= link_to "← Week #{wk - 1}", at101_week_path(wk - 1), class: "btn btn-outline-secondary btn-sm" %>
+    <% end %>
+  </div>
+  <div>
+    <% if wk < 10 %>
+      <%= link_to "Week #{wk + 1} →", at101_week_path(wk + 1), class: "btn btn-outline-secondary btn-sm" %>
+    <% end %>
+  </div>
+</nav>
 
-  <hr>
+<hr>
   <h2>WEEK 2 (hypertext)</h2>
-
-
-<div class="bodycopy">
+  <div class="bodycopy">
     Build yourself a website, using either hand-coded HTML and CSS or a content management system like Cargo or Wordpress
     <span class="note">(I won’t grade one method more favorably than the other)</span>.
     <br><br>
@@ -33,7 +32,7 @@
     <ul>
       <li>Although this is technically your “portfolio” site for this class, you’re not required to put your name or any identifying information anywhere on the site (though you certainly may).</li>
       <li>You’ll be asked to post all of your weekly projects on this website moving forward, but they don’t need to be on a publicly visible page as long as you send me the project page’s url on Moodle.</li>
-      <li>What information do you want to present, and how do you want to arrange it? Are you trying to be clear and direct? Or complex and opaque?</li>
+      <li><span class="u">What information do you want to present, and how do you want to arrange it?</span> Are you trying to be clear and direct? Or complex and opaque?</li>
       <li>What are the unique affordances of the platform you’re using to build your website? Are there ways to exploit and/or subvert them?</li>
       <li>Remember that you’ll be adding to this site throughout the rest of the semester. Consider how you might be able to give your website space to grow and develop (whatever that might mean to you).</li>
     </ul>
@@ -89,7 +88,7 @@
 
     <hr>
 
-    <p class="leadline">What information do you want to present, and how do you want to arrange it?</p>
+    <p class="leadline"><span class="u">What information do you want to present, and how do you want to arrange it?</span></p>
     <p>
       I want to present <span class="u">both course work and portfolio material</span> in a way that is
       <span class="u">clear and direct</span>. The navigation is simple: each major section is accessible
@@ -97,14 +96,14 @@
       structure, the site is easy to follow while still showing technical depth.
     </p>
 
-    <p class="leadline">What are the unique affordances of the platform you’re using?</p>
+    <p class="leadline"><span class="u">What are the unique affordances of the platform you’re using?</span></p>
     <p>
       Because I chose <span class="u">Ruby on Rails</span>, I can go beyond static HTML. Rails makes it
       possible to manage routes like <code>/weeks/:id</code> automatically, render Markdown or PDFs,
       and gate the AT101 section with password protection. I can also subvert the “portfolio”
       expectation by embedding live experiments directly into week pages, not just screenshots or static text.
     </p>
-    <p class="leadline">How can the site grow and develop?</p>
+    <p class="leadline"><span class="u">How can the site grow and develop?</span></p>
     <p>
       The site is designed to <span class="u">grow incrementally</span>. Each week I can add a new ERB file
       (and optionally a PDF) without breaking navigation. The AT101 index automatically links to
@@ -124,4 +123,3 @@
   </div>
 </div>
 
-<%= render "creative_code/shared/back_to_at101" %>
