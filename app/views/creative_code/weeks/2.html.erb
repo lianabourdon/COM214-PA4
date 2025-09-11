@@ -8,20 +8,6 @@
   my process, and the final piece, in a consistent structure so the collection is easy to browse.
 </aside>
 
-<nav class="d-flex justify-content-between my-3">
-  <% wk = @week.to_i %>
-  <div>
-    <% if wk > 1 %>
-      <%= link_to "← Week #{wk - 1}", at101_week_path(wk - 1), class: "btn btn-outline-secondary btn-sm" %>
-    <% end %>
-  </div>
-  <div>
-    <% if wk < 10 %>
-      <%= link_to "Week #{wk + 1} →", at101_week_path(wk + 1), class: "btn btn-outline-secondary btn-sm" %>
-    <% end %>
-  </div>
-</nav>
-
 <hr>
   <h2>WEEK 2 (hypertext)</h2>
   <div class="bodycopy">
