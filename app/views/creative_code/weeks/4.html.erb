@@ -18,3 +18,95 @@
   </div>
 </div>
 
+<div class="container py-4">
+  <hr>
+  <h3>Scratch Sketches — Week 4 Deliverables</h3>
+
+  <div class="bodycopy" style="max-width: 960px; margin-bottom: 12px;">
+    <p>
+      For this assignment, I created four Scratch sketches that demonstrate the required elements:
+      loops, conditionals, variables, user input, randomness, and a custom block.
+      Each sketch builds on the previous one, and the final project (“Abby”) incorporates everything.
+    </p>
+  </div>
+
+  <!-- Downloads -->
+  <div class="bodycopy" style="margin: 12px 0 8px 0;">
+    <p>Download the Scratch projects and documentation:</p>
+    <ul style="list-style: none; padding-left: 0; margin: 0;">
+      <li style="margin-bottom: 6px;">
+        <%= link_to "Sketch 1 — Simple Bounce (.sb3)",
+              "/downloads/week4/sketch1_bounce.sb3",
+              download: "sketch1_bounce.sb3",
+              data: { turbo: false } %>
+      </li>
+      <li style="margin-bottom: 6px;">
+        <%= link_to "Sketch 2 — Keyboard Walker (.sb3)",
+              "/downloads/week4/sketch2_walker.sb3",
+              download: "sketch2_walker.sb3",
+              data: { turbo: false } %>
+      </li>
+      <li style="margin-bottom: 6px;">
+        <%= link_to "Sketch 3 — Random Teleporter (.sb3)",
+              "/downloads/week4/sketch3_teleporter.sb3",
+              download: "sketch3_teleporter.sb3",
+              data: { turbo: false } %>
+      </li>
+      <li style="margin-bottom: 6px;">
+        <%= link_to "Sketch 4 — Abby (All Features) (.sb3)",
+              "/downloads/week4/sketch4_abby.sb3",
+              download: "sketch4_abby.sb3",
+              data: { turbo: false } %>
+      </li>
+      <li>
+        <%= link_to "HW4 Documentation (PDF)",
+              "/downloads/week4/HW4_documentation.pdf",
+              download: "HW4_documentation.pdf",
+              data: { turbo: false } %>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Inline Documentation -->
+  <div class="bodycopy" style="max-width: 960px; margin-top: 20px;">
+    <h4>Sketch 1 — Simple Bounce</h4>
+    <p>Description: The sprite moves across the stage forever. When it touches the edge, it bounces back.</p>
+    <p>Requirements shown:</p>
+    <ul>
+      <li>Loop (forever)</li>
+      <li>Conditional (if on edge, bounce)</li>
+    </ul>
+
+    <h4>Sketch 2 — Keyboard Walker</h4>
+    <p>Description: The sprite moves right when the right arrow is pressed, and left when the left arrow is pressed. The speed variable controls how fast it moves.</p>
+    <p>Requirements shown:</p>
+    <ul>
+      <li>Variable (speed)</li>
+      <li>User input (arrow keys)</li>
+      <li>Loop (forever)</li>
+      <li>Conditional (if key pressed)</li>
+    </ul>
+
+    <h4>Sketch 3 — Random Teleporter</h4>
+    <p>Description: When the space key is pressed, the sprite jumps to a random location on the stage. This repeats as long as the program runs.</p>
+    <p>Requirements shown:</p>
+    <ul>
+      <li>Loop (forever)</li>
+      <li>Conditional (if key pressed)</li>
+      <li>User input (space key)</li>
+      <li>Randomness (pick random for X and Y positions)</li>
+    </ul>
+
+    <h4>Sketch 4 — Abby (Speeding Sprite with Custom Block)</h4>
+    <p>Description: The sprite starts in a random direction and moves at a speed controlled by the speed variable. It bounces off the edges, flashes colors on impact, and speed can be increased or decreased with arrow keys. A custom block (My Move) organizes the motion and bounce logic.</p>
+    <p>Requirements shown:</p>
+    <ul>
+      <li>Loops (forever, repeat)</li>
+      <li>Conditionals (if touching edge, if key pressed, if speed &lt; 1)</li>
+      <li>Variable (speed)</li>
+      <li>User input (arrow keys)</li>
+      <li>Randomness (random direction at start)</li>
+    </ul>
+  </div>
+</div>
+
