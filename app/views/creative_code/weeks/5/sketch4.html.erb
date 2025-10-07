@@ -24,14 +24,14 @@
   <p><strong>✅ Loop:</strong> Continuous draw loop for motion updates</p>
   <p><strong>✅ Custom variables:</strong> position, speed, easing factor</p>
   <p class="mt-2 mb-0">
-    <a href="/assets/sketch4.js" download class="btn btn-sm btn-outline-secondary">⬇ Download sketch4.js</a>
+    <a href="<%= asset_path('sketch4.js') %>" download class="btn btn-sm btn-outline-secondary">⬇ Download sketch4.js</a>
   </p>
 </div>
 
 <script src="/downloads/week5/p5.min.js"></script>
 <script src="/downloads/week5/p5play.js"></script>
 <% if Rails.env.development? %>
-  <script src="/assets/sketch4.js"></script>
+  <script src="<%= asset_path('sketch4.js') %>"></script>
 <% else %>
   <%= javascript_include_tag "sketch4" %>
 <% end %>

@@ -24,14 +24,14 @@
   <p><strong>✅ Loop:</strong> Continuous draw loop generating random steps</p>
   <p><strong>✅ Custom variables:</strong> position, step size, randomness</p>
   <p class="mt-2 mb-0">
-    <a href="/assets/sketch5.js" download class="btn btn-sm btn-outline-secondary">⬇ Download sketch5.js</a>
+    <a href="<%= asset_path('sketch5.js') %>" download class="btn btn-sm btn-outline-secondary">⬇ Download sketch5.js</a>
   </p>
 </div>
 
 <script src="/downloads/week5/p5.min.js"></script>
 <script src="/downloads/week5/p5play.js"></script>
 <% if Rails.env.development? %>
-  <script src="/assets/sketch5.js"></script>
+  <script src="<%= asset_path('sketch5.js') %>"></script>
 <% else %>
   <%= javascript_include_tag "sketch5" %>
 <% end %>

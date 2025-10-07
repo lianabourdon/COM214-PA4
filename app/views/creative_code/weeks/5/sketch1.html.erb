@@ -26,7 +26,7 @@
   <p><strong>✅ Loop:</strong> Implicit draw loop ensures continuous motion</p>
   <p><strong>✅ Custom variables:</strong> position, velocity, gravity</p>
   <p class="mt-2 mb-0">
-    <a href="/assets/sketch1.js" download class="btn btn-sm btn-outline-secondary">⬇ Download sketch1.js</a>
+    <a href="<%= asset_path('sketch1.js') %>" download class="btn btn-sm btn-outline-secondary">⬇ Download sketch1.js</a>
   </p>
 </div>
 
@@ -45,4 +45,5 @@
   <script src="/assets/sketch1.js"></script>
 <% else %>
   <%= javascript_include_tag "sketch1" %>
-<% end %><!-- Your sketch -->
+<% end %>
+
