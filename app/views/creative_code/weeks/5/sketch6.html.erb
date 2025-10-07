@@ -1,0 +1,43 @@
+<%= render "creative_code/week_header" %>
+
+<div class="container-fluid min-vh-100 d-flex flex-column justify-content-center align-items-center text-center cargo-syllabus" style="margin-top: -150px;">
+  <h2 class="mb-3">Sketch 6 – Rain of Circles</h2>
+  <p class="lead mb-2">
+    This sketch simulates colorful raindrops falling from the top of the screen. Each circle resets to the top when it reaches the bottom.
+  </p>
+
+  <!-- Centered canvas -->
+  <div id="sketch-container"
+       class="border rounded shadow bg-light p-3 d-flex justify-content-center align-items-center mb-1"
+       style="width: fit-content; height: fit-content; min-width: 420px; min-height: 340px;">
+  </div>
+
+  <!-- Navigation buttons (below the canvas) -->
+  <div class="d-flex justify-content-center gap-3 mt-3 mb-2">
+    <%= link_to "← Sketch 5", at101_sketch_path(week: 5, sketch: 5), class: "btn btn-outline-primary" %>
+    <%= link_to "← Back to Week 5", at101_week_path(5), class: "btn btn-outline-secondary" %>
+    <%= link_to "Sketch 7 →", at101_sketch_path(week: 5, sketch: 7), class: "btn btn-primary" %>
+  </div>
+</div>
+
+<!-- Summary box -->
+<div class="container text-start small bg-dark text-light rounded p-3 mb-3 border"
+     style="max-width: 620px; margin-top: -200px;">
+  <p><strong>✅ Conditional:</strong> Resets drops when they leave the screen → <code>if (y &gt; height) { y = 0; }</code></p>
+  <p><strong>✅ Loop:</strong> Continuous <code>draw()</code> loop animates falling drops</p>
+  <p><strong>✅ Custom variables:</strong> drop position, speed, color</p>
+  <p class="mt-2 mb-0">
+    <a href="/assets/sketch6.js" download class="btn btn-sm btn-outline-secondary">⬇ Download sketch6.js</a>
+  </p>
+</div>
+
+<!-- ============================== -->
+<!--  LOCAL SCRIPT LOADING ORDER   -->
+<!-- ============================== -->
+
+<!-- p5 core -->
+<script src="/downloads/week5/p5.min.js"></script>
+
+<!-- Your sketch -->
+<script src="/assets/sketch6.js"></script>
+

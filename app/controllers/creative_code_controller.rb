@@ -1,7 +1,6 @@
 class CreativeCodeController < ApplicationController
   before_action { @noindex = true } # keep these pages out of search
 
-  # Week titles to display on the index cards
   TITLES = {
     1  => "AI",
     2  => "Hypertext",
@@ -25,8 +24,25 @@ class CreativeCodeController < ApplicationController
     unless (1..10).include?(@week)
       raise ActionController::RoutingError, "Not Found"
     end
-    # render app/views/creative_code/weeks/<n>.html.erb
     render "creative_code/weeks/#{@week}"
   end
-end
 
+def sketch
+  @week   = params[:week].to_i
+  @sketch = params[:sketch].to_i
+
+  template_path = "creative_code/weeks/#{@week}/sketch#{@sketch}"
+
+  # Debug logging to confirm correct lookup path
+  full_path = Rails.root.join("app", "views", "#{template_path}.html.erb")
+  Rails.logger.info("🔍 Looking for: #{full_path}")
+  Rails.logger.info("📄 Exists? #{File.exist?(full_path)}")
+
+  if File.exist?(full_path)
+    render template_path
+  else
+    Rails.logger.warn("❌ Missing template: #{template_path}")
+    raise ActionController::RoutingError, "Sketch not found"
+  end
+end
+end

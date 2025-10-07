@@ -4,17 +4,49 @@
   <hr>
   <h2>WEEK 5 (pixels and animation 2)</h2>
   <div class="bodycopy">
-    <span class="leadline">Create 5–7 sketches in p5.js. Use each of the following at least once:</span>
+    <span class="leadline">
+      Create 5–7 sketches in p5.js. Use each of the following at least once:
+    </span>
     <ul>
-      <li>a conditional statement (if/else if/etc)</li>
+      <li>a conditional statement (if / else / etc.)</li>
       <li>a for loop or while loop</li>
       <li>a custom variable</li>
-      <li>a function other than <code>setup()</code> and <code>draw()</code> (this can be another built-in function like <code>keyPressed()</code> or <code>mousePressed()</code>, or a custom function)</li>
+      <li>a function other than <code>setup()</code> and <code>draw()</code></li>
       <li>a user input (keyboard, mouse, webcam, microphone)</li>
       <li>an element of randomness</li>
     </ul>
-    Feel free to iterate on your Scratch sketches in p5. Try to spread these out over the course of the week,
-    ideally working on one (at least briefly) every day. Remember: the best way to get good at something is to do it every day.
+    <p>
+      Feel free to iterate on your Scratch sketches in p5. Try to spread these out over the course of the week — 
+      ideally one sketch each day. The best way to get good at something is to do it every day.
+    </p>
+  </div>
+
+  <hr>
+
+  <!-- Sketch grid -->
+  <div class="row g-4 text-center">
+    <% sketches = [
+      { num: 1, title: "Bouncing Ball", color: "bg-danger" },
+      { num: 2, title: "Keyboard Walker", color: "bg-warning" },
+      { num: 3, title: "Teleporter", color: "bg-success" },
+      { num: 4, title: "Abby", color: "bg-info" },
+      { num: 5, title: "Random Walker", color: "bg-primary" },
+      { num: 6, title: "Rain of Circles", color: "bg-secondary" },
+      { num: 7, title: "Interactive Paintbrush", color: "bg-dark" }
+    ] %>
+
+    <% sketches.each do |s| %>
+      <div class="col-md-4">
+        <div class="card shadow-lg text-white <%= s[:color] %> rounded-4 border-0 h-100">
+          <div class="card-body d-flex flex-column justify-content-center align-items-center">
+            <h3 class="fw-bold mb-3">Sketch <%= s[:num] %></h3>
+            <p class="fs-5"><%= s[:title] %></p>
+            <!-- ✅ Fixed: now points to /at101/... instead of /creative_code/... -->
+            <%= link_to "View Sketch", at101_sketch_path(week: 5, sketch: s[:num]), class: "btn btn-light fw-semibold mt-2" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
 
