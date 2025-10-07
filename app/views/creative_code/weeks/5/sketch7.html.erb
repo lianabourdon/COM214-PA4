@@ -38,5 +38,9 @@
 <script src="/downloads/week5/p5.min.js"></script>
 
 <!-- Your sketch -->
-<script src="/assets/sketch7.js"></script>
+<% if Rails.env.development? %>
+  <script src="/assets/sketch7.js"></script>
+<% else %>
+  <%= javascript_include_tag "sketch7" %>
+<% end %>
 
