@@ -41,5 +41,9 @@
 <script src="/downloads/week5/p5play.js"></script>
 
 <!-- Your sketch -->
-<script src="/assets/sketch1.js"></script>
+<% if Rails.env.development? %>
+  <script src="/assets/sketch1.js"></script>
+<% else %>
+  <%= javascript_include_tag "sketch1" %>
+<% end %>
 
