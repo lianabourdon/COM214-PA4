@@ -3,33 +3,42 @@
 <div class="container-fluid min-vh-100 d-flex flex-column justify-content-center align-items-center text-center cargo-syllabus" style="margin-top: -150px;">
   <h2 class="mb-3">Sketch 5 – Random Walker</h2>
   <p class="lead mb-2">
-    This sketch creates a particle that wanders randomly across the screen — unpredictable motion driven by chance.
+    This sketch creates a particle that wanders randomly across the screen — an unpredictable motion driven by chance.
   </p>
 
-  <div class="d-flex justify-content-center align-items-center mt-4 mb-3" style="gap: 2rem;">
+  <!-- Centered canvas -->
+  <div id="sketch-container"
+       class="border rounded shadow bg-light p-3 d-flex justify-content-center align-items-center mb-1"
+       style="width: fit-content; height: fit-content; min-width: 420px; min-height: 340px;">
+  </div>
+
+  <!-- Navigation buttons (below the canvas) -->
+  <div class="d-flex justify-content-center gap-3 mt-3 mb-2">
     <%= link_to "← Sketch 4", at101_sketch_path(week: 5, sketch: 4), class: "btn btn-outline-primary" %>
-
-    <div id="sketch-container"
-         class="border rounded shadow bg-light p-3 d-flex justify-content-center align-items-center"
-         style="width: 420px; height: 340px;">
-    </div>
-
+    <%= link_to "← Back to Week 5", at101_week_path(5), class: "btn btn-outline-secondary" %>
     <%= link_to "Sketch 6 →", at101_sketch_path(week: 5, sketch: 6), class: "btn btn-primary" %>
   </div>
 </div>
 
+<!-- Summary box -->
 <div class="container text-start small bg-dark text-light rounded p-3 mb-3 border"
-     style="max-width: 580px; margin-top: -180px;">
+     style="max-width: 620px; margin-top: -200px;">
   <p><strong>✅ Conditional:</strong> Edge wrapping → <code>if (x &lt; 0) x = width; if (x &gt; width) x = 0;</code></p>
-  <p><strong>✅ Loop:</strong> Continuous draw loop generating random steps</p>
+  <p><strong>✅ Loop:</strong> Continuous <code>draw()</code> loop generating random motion</p>
   <p><strong>✅ Custom variables:</strong> position, step size, randomness</p>
   <p class="mt-2 mb-0">
     <a href="/assets/sketch5.js" download class="btn btn-sm btn-outline-secondary">⬇ Download sketch5.js</a>
   </p>
 </div>
 
+<!-- ============================== -->
+<!--  LOCAL SCRIPT LOADING ORDER   -->
+<!-- ============================== -->
+
+<!-- p5 core -->
 <script src="/downloads/week5/p5.min.js"></script>
-<script src="/downloads/week5/p5play.js"></script>
+
+<!-- Your sketch -->
 <% if Rails.env.development? %>
   <script src="/assets/sketch5.js"></script>
 <% else %>

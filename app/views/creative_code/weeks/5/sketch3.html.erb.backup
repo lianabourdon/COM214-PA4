@@ -1,0 +1,47 @@
+<%= render "creative_code/week_header" %>
+
+<div class="container-fluid min-vh-100 d-flex flex-column justify-content-center align-items-center text-center cargo-syllabus" style="margin-top: -150px;">
+  <h2 class="mb-3">Sketch 3 – Teleporter</h2>
+  <p class="lead mb-2">
+    Move the circle around with your arrow keys. When it reaches the edge, it instantly teleports to the opposite side of the screen.
+  </p>
+
+  <!-- Centered canvas -->
+  <div id="sketch-container"
+       class="border rounded shadow bg-light p-3 d-flex justify-content-center align-items-center mb-1"
+       style="width: fit-content; height: fit-content; min-width: 420px; min-height: 340px;">
+  </div>
+
+  <!-- Navigation buttons (below the canvas) -->
+  <div class="d-flex justify-content-center gap-3 mt-3 mb-2">
+    <%= link_to "← Sketch 2", at101_sketch_path(week: 5, sketch: 2), class: "btn btn-outline-primary" %>
+    <%= link_to "← Back to Week 5", at101_week_path(5), class: "btn btn-outline-secondary" %>
+    <%= link_to "Sketch 4 →", at101_sketch_path(week: 5, sketch: 4), class: "btn btn-primary" %>
+  </div>
+</div>
+
+<!-- Summary box -->
+<div class="container text-start small bg-dark text-light rounded p-3 mb-3 border"
+     style="max-width: 580px; margin-top: -200px;">
+  <p><strong>✅ Conditional:</strong> Teleports the circle across edges → <code>if (x &lt; 0) x = width; if (x &gt; width) x = 0;</code></p>
+  <p><strong>✅ Loop:</strong> Continuous <code>draw()</code> loop handles movement and teleport logic</p>
+  <p><strong>✅ Custom variables:</strong> position, speed, teleport triggers</p>
+  <p class="mt-2 mb-0">
+    <a href="/assets/sketch3.js" download class="btn btn-sm btn-outline-secondary">⬇ Download sketch3.js</a>
+  </p>
+</div>
+
+<!-- ============================== -->
+<!--  LOCAL SCRIPT LOADING ORDER   -->
+<!-- ============================== -->
+
+<!-- p5 core -->
+<script src="/downloads/week5/p5.min.js"></script>
+
+<!-- Your sketch -->
+<% if Rails.env.development? %>
+  <script src="/assets/sketch3.js"></script>
+<% else %>
+  <%= javascript_include_tag "sketch3" %>
+<% end %>
+

@@ -6,25 +6,26 @@
     Use your arrow keys or <code>W</code>, <code>A</code>, <code>S</code>, <code>D</code> to move the character across the screen.
   </p>
 
-  <!-- Canvas + Navigation Row -->
-  <div class="d-flex justify-content-center align-items-center mt-4 mb-3" style="gap: 2rem;">
+  <!-- Centered canvas -->
+  <div id="sketch-container"
+       class="border rounded shadow bg-light p-3 d-flex justify-content-center align-items-center mb-1"
+       style="width: fit-content; height: fit-content; min-width: 420px; min-height: 340px;">
+  </div>
+
+  <!-- Navigation buttons (below the canvas) -->
+  <div class="d-flex justify-content-center gap-3 mt-3 mb-2">
     <%= link_to "← Sketch 1", at101_sketch_path(week: 5, sketch: 1), class: "btn btn-outline-primary" %>
-
-    <div id="sketch-container"
-         class="border rounded shadow bg-light p-3 d-flex justify-content-center align-items-center"
-         style="width: 420px; height: 340px;">
-    </div>
-
+    <%= link_to "← Back to Week 5", at101_week_path(5), class: "btn btn-outline-secondary" %>
     <%= link_to "Sketch 3 →", at101_sketch_path(week: 5, sketch: 3), class: "btn btn-primary" %>
   </div>
 </div>
 
 <!-- Summary box -->
 <div class="container text-start small bg-dark text-light rounded p-3 mb-3 border"
-     style="max-width: 580px; margin-top: -180px;">
-  <p><strong>✅ Conditional:</strong> Edge checks → <code>if (walker.x &lt; 0 || walker.x &gt; width) { velocityX *= -1 }</code></p>
-  <p><strong>✅ Loop:</strong> Implicit draw loop for continuous movement</p>
-  <p><strong>✅ Custom variables:</strong> position, velocity, input handling</p>
+     style="max-width: 650px; margin-top: -200px;">
+  <p><strong>✅ Conditional:</strong> Keeps walker inside screen bounds → <code>if (x &lt; 0 || x &gt; width) x = constrain(x, 0, width);</code></p>
+  <p><strong>✅ Loop:</strong> Continuous <code>draw()</code> loop for motion</p>
+  <p><strong>✅ Custom variables:</strong> position, speed, input handling</p>
   <p class="mt-2 mb-0">
     <a href="/assets/sketch2.js" download class="btn btn-sm btn-outline-secondary">⬇ Download sketch2.js</a>
   </p>
@@ -36,9 +37,6 @@
 
 <!-- p5 core -->
 <script src="/downloads/week5/p5.min.js"></script>
-
-<!-- p5play (optional, if needed for sprites) -->
-<script src="/downloads/week5/p5play.js"></script>
 
 <!-- Your sketch -->
 <% if Rails.env.development? %>
